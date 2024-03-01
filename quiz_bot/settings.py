@@ -38,7 +38,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-td(*4#)n^+hy_z=kn+(&7g=aj)a7)!)cqoh28p2sxdozd_0-d7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = bool_value('DEBUG', True)
+
+
 
 ALLOWED_HOSTS = [
     "localhost",
@@ -92,14 +95,16 @@ WSGI_APPLICATION = "quiz_bot.wsgi.application"
 
 ASGI_APPLICATION = "quiz_bot.asgi.application"
 
+# settings.py or your configuration file
 CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [("redis", 6379)],
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
         },
     },
 }
+
 
 
 # Database
@@ -107,12 +112,12 @@ CHANNEL_LAYERS = {
 
 DATABASES = {
     'default': {
-        'ENGINE': env('DB_ENGINE', 'django.db.backends.postgresql'),
-        'NAME': env('DB_NAME', 'postgres'),
-        'USER': env('DB_USER', 'postgres'),
-        'PASSWORD': env('DB_PASSWORD', 'password'),
-        'HOST': env('DB_HOST', 'db'),
-        'PORT': env('DB_PORT', '5432'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'meddic',
+        'USER': 'postgres',
+        'PASSWORD': '12345',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

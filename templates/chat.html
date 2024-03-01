@@ -146,6 +146,28 @@
 
     }
 
+    function resetChat() {
+        // Use fetch or AJAX to send a request to the server to reset the chat
+        fetch('/reset_chat', {
+            method: 'POST', // or 'GET' depending on your server setup
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            // Add any necessary data for the server, such as user ID or session ID
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle the response or update the UI
+            console.log('Chat reset successfully');
+            // Optionally, you can clear the user interface or update it to indicate the reset
+            // For example, clear the chat history, hide messages, etc.
+        })
+        .catch((error) => {
+            console.error('Error resetting chat:', error);
+        });
+    }
+    
+
     </script>
 </body>
 </html>
